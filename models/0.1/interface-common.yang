@@ -38,7 +38,7 @@ module selena-config-interface-common {
             }
             leaf vlan {
                 description "VLAN interface type";
-                type uint8 {
+                type uint16 {
                     range "0..4096";
                 }
             }
