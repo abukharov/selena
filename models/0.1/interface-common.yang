@@ -1,0 +1,59 @@
+module selena-config-interface-common {
+    namespace "http://example.com/selena-interfaces";
+    prefix if;
+
+    import ietf-yang-types {
+        prefix yang;
+    }
+
+    organization "Example Organization";
+
+    description
+        "This module defines interfaces for the Selena CLI application";
+
+    revision 2025-04-01 {
+        description
+            "Initial revision.";
+    }
+
+    grouping interface-type {
+        choice interface-type {
+            leaf loopback {
+                description "Loopback interface type";
+                type uint8 {
+                    range "0..255";
+                }
+            }
+            leaf ethernet {
+                description "Ethernet interface type";
+                type uint8 {
+                    range "0..255";
+                }
+            }
+            leaf wifi {
+                description "WiFi interface type";
+                type uint8 {
+                    range "0..255";
+                }
+            }
+            leaf vlan {
+                description "VLAN interface type";
+                type uint8 {
+                    range "0..4096";
+                }
+            }
+            leaf team {
+                description "Team interface type";
+                type uint8 {
+                    range "0..255";
+                }
+            }
+            leaf wireguard {
+                description "WireGuard interface type";
+                type uint8 {
+                    range "0..255";
+                }
+            }
+        }
+    }
+}
